@@ -1,0 +1,2 @@
+orderId,orderNumber,totalPrice,paymentGateway,customerEmail,customerName,customerAddress,tags,createdAt
+1,R-TEST-001,9876.54,Manual Test,test@example.com,Test User,"123 Test St, Tokyo","test,debug",Mon Jul 21 2025 11:11:48 GMT+0900 (日本標準時)
