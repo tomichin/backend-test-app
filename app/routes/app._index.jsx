@@ -8,10 +8,7 @@ import {
   Layout,
   Page,
   IndexTable,
-  Thumbnail,
-  Text,
-  Icon,
-  InlineStack,
+  Button,
 } from "@shopify/polaris";
 
 import { getOrders } from "../models/order.server";
@@ -71,11 +68,18 @@ export default function Index() {
   return (
     <Page>
       <ui-title-bar title="Orders">
-        <button variant="primary" onClick={() => navigate("/app/orders/new")}>
-          Export CSV
-        </button>
       </ui-title-bar>
       <Layout>
+        <Layout.Section>
+        <Button
+          disabled={orders.length === 0}
+          url="/orders/export"
+          download
+          variant="primary"
+        >
+        Export CSV
+        </Button>
+        </Layout.Section>
         <Layout.Section>
           <Card padding="0">
             {orders.length === 0 ? (

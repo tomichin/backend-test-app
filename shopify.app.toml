@@ -3,7 +3,7 @@
 client_id = "eee22281931f519bdb464264364a655c"
 name = "backend-test-app"
 handle = "backend-test-app-3"
-application_url = "https://method-pest-significance-fifth.trycloudflare.com"
+application_url = "https://placement-computing-maybe-fail.trycloudflare.com"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-07"
 scopes = "write_products"
 
 [auth]
-redirect_urls = ["https://method-pest-significance-fifth.trycloudflare.com/auth/callback", "https://method-pest-significance-fifth.trycloudflare.com/auth/shopify/callback", "https://method-pest-significance-fifth.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://placement-computing-maybe-fail.trycloudflare.com/auth/callback", "https://placement-computing-maybe-fail.trycloudflare.com/auth/shopify/callback", "https://placement-computing-maybe-fail.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
