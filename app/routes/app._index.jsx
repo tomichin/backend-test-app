@@ -1,6 +1,6 @@
 
 import { json } from "@remix-run/node";
-import { useLoaderData, useNavigate } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { authenticate } from "../shopify.server";
 import {
   Card,
@@ -12,14 +12,13 @@ import {
 } from "@shopify/polaris";
 
 import { getOrders } from "../models/order.server";
-import { AlertDiamondIcon, ImageIcon } from "@shopify/polaris-icons";
 
 export async function loader() {
   const orders = await getOrders();
   return json({orders});
 }
 
-const EmptyOrderState = ({ onAction }) => (
+const EmptyOrderState = (
   <EmptyState>
     <p>No Orders.</p>
   </EmptyState>
@@ -63,12 +62,9 @@ const OrderTableRow = ({ order }) => (
 
 export default function Index() {
   const { orders } = useLoaderData();
-  const navigate = useNavigate();
 
   return (
     <Page>
-      <ui-title-bar title="Orders">
-      </ui-title-bar>
       <Layout>
         <Layout.Section>
         <Button
@@ -83,7 +79,7 @@ export default function Index() {
         <Layout.Section>
           <Card padding="0">
             {orders.length === 0 ? (
-              <EmptyOrderState onAction={() => navigate("orders/new")} />
+              <EmptyOrderState />
             ) : (
               <OrderTable orders={orders} />
             )}

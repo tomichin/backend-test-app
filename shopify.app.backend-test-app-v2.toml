@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "ae001c2a1fc6e0f0cee30a44e2cee7c0"
+name = "backend-test-app-v2"
+handle = "backend-test-app-v2"
+application_url = "https://starts-span-advisory-crucial.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "orders/create" ]
+  uri = "/webhooks"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_orders,write_products"
+
+[auth]
+redirect_urls = ["https://starts-span-advisory-crucial.trycloudflare.com/auth/callback", "https://starts-span-advisory-crucial.trycloudflare.com/auth/shopify/callback", "https://starts-span-advisory-crucial.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false

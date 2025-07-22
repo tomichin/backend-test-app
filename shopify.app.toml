@@ -3,30 +3,34 @@
 client_id = "eee22281931f519bdb464264364a655c"
 name = "backend-test-app"
 handle = "backend-test-app-3"
-application_url = "https://placement-computing-maybe-fail.trycloudflare.com"
+application_url = "https://nitrogen-earthquake-toll-killing.trycloudflare.com"
 embedded = true
 
 [build]
-include_config_on_deploy = true
 automatically_update_urls_on_dev = true
+include_config_on_deploy = true
 
 [webhooks]
 api_version = "2025-07"
 
   [[webhooks.subscriptions]]
-  topics = [ "app/uninstalled" ]
-  uri = "/webhooks/app/uninstalled"
+  topics = [ "orders/create" ]
+  uri = "/webhooks"
 
   [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
   uri = "/webhooks/app/scopes_update"
 
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "read_orders,write_products"
 
 [auth]
-redirect_urls = ["https://placement-computing-maybe-fail.trycloudflare.com/auth/callback", "https://placement-computing-maybe-fail.trycloudflare.com/auth/shopify/callback", "https://placement-computing-maybe-fail.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://nitrogen-earthquake-toll-killing.trycloudflare.com/auth/callback", "https://nitrogen-earthquake-toll-killing.trycloudflare.com/auth/shopify/callback", "https://nitrogen-earthquake-toll-killing.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
